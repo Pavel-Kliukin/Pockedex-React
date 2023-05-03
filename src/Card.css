@@ -1,0 +1,25 @@
+:root {
+  --card-width: 11rem;
+  --card-height: 18rem;
+  --textColor:  rgb(112, 219, 249);
+  --colorLight: #5ddcff;
+  --colorMiddle: #3c67e3;
+  --colorDark: #4e00c2;
+  --colorBG: rgb(48, 46, 46);
+}
+
+.card {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: 5px;
+  border-color: var(--colorMiddle);
+  border-style: solid;
+  border-width: 2px;
+  background-color: var(--colorBG);
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
