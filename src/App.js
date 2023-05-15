@@ -6,15 +6,14 @@ import Card from './Card';
 function App() {
 
   const [data, setData] = useState(false);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => { 
-    console.log('I,m inside useEffect');
     setIsLoading(true);
 
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
     .then((res) => {
-      setData(res.data.results)
+      setData(res.data.results) //here we gets the "primary" array of pokemons: [{name: <name>, url: 'http//...'}, ... ]
       setIsLoading(false)
     });
   }, [] );
@@ -22,16 +21,16 @@ function App() {
   if (isLoading) {
     return <p>Loading...</p>
   }
-  console.log(data);
-  console.log('isLoading = ', isLoading);
 
   return (
     <div className="App">
       <h1>POKEDEX</h1>
-      {data.map(pokemon => <Card  
-        // src={pokemon.sprites.other.dream_world.front_default}
-        name={pokemon.name}  
-      />)}
+      <div id="cards">
+        {data.map(pokemon => <Card
+          key={pokemon.name}
+          url={pokemon.url}  
+        />)}
+      </div>
     </div>
   );
 }

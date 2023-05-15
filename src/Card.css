@@ -23,3 +23,48 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.idAndTypes {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.pokID {
+  margin: 0.2rem;
+}
+
+.pokemonTypeImg {
+  width: 25px;
+  height: 25px;
+}
+
+.pokemonImg {
+  max-width: 90%;
+  max-height: 60%;
+  filter:sepia(100%);
+  justify-content: center;
+}
+
+.pokemonImg:hover {
+  filter:sepia(0);
+}
+
+.bottomOfCard {
+  height: 17%;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: black;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokName{
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+}
